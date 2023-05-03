@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: myfont;
+            src: url(font/Samim.ttf);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            direction: rtl;
+        }
+
+
+
+        .container {
+            width: 100%;
+            height: 600px;
+            padding: 100px 200px;
+        }
+
+        .box {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            border: 2px solid rgb(236, 236, 236);
+            border-radius: 10px;
+        }
+
+        .buttons {
+            width: 30%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .buttons>button {
+            width: 80%;
+            height: 45px;
+            border-radius: 10px;
+            margin: 10px 0px;
+            font-family: myfont;
+            font-size: 16px;
+            background-color: #f5f5f6;
+            border: none;
+            cursor: pointer;
+            color: rgb(99, 99, 99);
+            transition: 0.2s;
+        }
+
+        button:focus {
+            background-color: #ff00a6;
+            color: white;
+        }
+
+        button:focus>.conts {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .conts {
+            position: absolute;
+            right: 338px;
+            top: 0;
+            width: 790px;
+            height: 100%;
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.2s;
+            cursor:default;
+        }
+
+        .text {
+            width: 60%;
+            height: 100%;
+            padding: 100px 0px 0px 20px;
+            text-align: right;
+        }
+
+        .text>h2 {
+            color: rgb(38, 38, 38);
+            font-size: 22px;
+            margin-top: 10px;
+        }
+
+        .text>span {
+            color: rgb(99, 99, 99);
+            width: 100%;
+            margin-top: 20px;
+            display: flex;
+            line-height: 30px;
+        }
+
+
+        .img {
+            width: 40%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .img>img {
+            width: 100%;
+            height: 45%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 10px;
+        }
+
+
+        @media screen and (max-width:992px){
+            .container{
+                padding: 50px 100px;
+            }
+
+            .box{
+                flex-direction: column;
+            }
+
+            .buttons{
+                width: 100%;
+                height: 20%;
+                border: 2px solid green;
+                display: flex;
+                flex-direction: row;
+            }
+            button{
+                width: 100px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="buttons">
+
+                <button id="button1">انتخاب نوع غذا
+                    <div class="conts">
+                        <div class="text">
+                            <h2>شروع سفارش و انتخاب غذا </h2>
+                            <span>
+                                پایین صفحه اصلی سوپراپ، گزینه غذا را بزنید. سپس برای مشاهده رستوران‌های اطراف، آدرس‌تان
+                                را وارد کنید. حالا غذای موردنظرتان را بالای صفحه بنویسید یا گزینه رستوران را بزنید. راه
+                                آسان‌تر این است که در بخش دسته‌بندی‌ها، نوع غذا را مشخص کنید. از فودپارتی، جایزه خرید یا
+                                تخفیف‌ها هم غافل نشوید.
+                            </span>
+                        </div>
+                        <div class="img">
+                            <img src="img/4-1-new.jpg" alt="">
+                        </div>
+                    </div>
+                </button>
+
+
+
+
+
+                <button>انتخاب رستوران
+                    <div class="conts">
+                        <div class="text">
+                            <h2>پیدا کردن رستوران دلخواه </h2>
+                            <span>
+                                با انتخاب نوع غذا یا ورود به لیست رستوران‌ها، تعداد رستوران‌های باز را می‌بینید. به‌کمک فیلترهای بالای صفحه، می‌توانید دسته‌بندی غذا را جزئی‌تر هم بکنید، مثلاً مرغ یا خورش. با انتخاب گزینه «به ترتیب»، رستوران‌ها را براساس قیمت، امتیاز کاربران، عملکرد کلی و... مرتب کنید تا بتوانید بهتر تصمیم بگیرید.
+                            </span>
+                        </div>
+                        <div class="img">
+                            <img src="img/4-2-new.jpg" alt="">
+                        </div>
+                    </div>
+                </button>
+
+
+
+                <button>انتخاب غذای دلخواه
+                    <div class="conts">
+                        <div class="text">
+                            <h2>بررسی منو، انتخاب غذا و نوشتن توضیحات </h2>
+                            <span>
+                                در منوی رستوران، غذا و مخلفات موردنظرتان را انتخاب کنید. با گزینه «افزودن»، تعداد سفارش و موارد دلخواه مثل پک قاشق و چنگال را مشخص کنید. با زدن گزینه «تکمیل خرید»، در صفحه جدید، توضیحات دلخواه‌تان را بنویسید، مثلاً ظرف خورش داخل برنج نباشد. سپس گزینه «ادامه» را بزنید.
+                            </span>
+                        </div>
+                        <div class="img">
+                            <img src="img/4-3-new.jpg" alt="">
+                        </div>
+                    </div>
+                </button>
+
+
+
+
+
+                <button>انتخاب روش تحویل و پرداخت
+                    <div class="conts">
+                        <div class="text">
+                            <h2>پرداخت آنلاین یا اعتباری و تحویل با پیک یا حضوری </h2>
+                            <span>
+                                روش تحویل سفارش را مشخص کنید: درب منزل ارسال شود یا خودتان به رستوران مراجعه می‌کنید؟ حالا نوبت انتخاب روش پرداخت است: آنلاین یا اعتباری؟ اگر کد تخفیف هم دارید، وارد کنید. با پرداخت فاکتور، در صفحه جدیدی که برای شما باز می‌شود، فرایند آماده‌سازی را خواهید دید.
+                            </span>
+                        </div>
+                        <div class="img">
+                            <img src="img/4-4-new.jpg" alt="">
+                        </div>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
